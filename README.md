@@ -1,71 +1,203 @@
 # Mock US Railway Cargo SSE Server
 
-This repo contains a tiny Node.js / Express **Server-Sent Events (SSE)** server that simulates US railway cargo activity:
+This project is a **Node.js/Express mock Server-Sent Events (SSE) server** that simulates US railway cargo operations:
 
-- Trains moving between major freight hubs
-- Cars with multiple airway bills (AWBs)
-- AWBs loading, going **IN_TRANSIT**, and being **DELIVERED**
-- Optional filters by AWB, train name, car number, station, and status
-- A tiny HTML dashboard to visualize the live data stream
+- Trains moving between fictional US freight hubs
+- Cars on each train
+- Airway bills (AWBs) loaded, in transit, and delivered
+- Realistic-ish movement using distances + speeds + dwell time
+- A tiny HTML dashboard with:
+  - Live SSE connection
+  - Filters (AWB, train, car, station, status)
+  - **Map view** showing trains and stations
+  - Train list + raw JSON payload view
 
-It is designed to run easily in **GitHub Codespaces** and to be used as a mock backend for integration / iPaaS / Amplify Fusion demos.
+It’s designed to be easy to run locally or in **GitHub Codespaces** and to act as a “live system” for SSE / streaming demos.
 
 ---
 
 ## Features
 
-- **SSE endpoint** at `GET /SSE/Stream`
-- Streams a JSON payload every `TICK_MS` milliseconds
-- **Realistic-ish data model**:
-  - Trains with routes across fictionalized US freight hubs
-  - Interpolated GPS coordinates between stations
-  - Cars with multiple AWBs
-  - AWBs loaded at origin, travel in transit, and are delivered at destination
-- **Filterable stream** using query parameters:
-  - `awb` or `airwayBill` – Airway bill number (exact/partial)
-  - `trainName` – Train name (partial, case-insensitive)
-  - `carNumber` – Car number (partial, case-insensitive)
-  - `station` – Station code or name (origin/destination/offload)
-  - `status` – `LOADED`, `IN_TRANSIT`, or `DELIVERED`
-- **Configurable via environment variables**
-- **Tiny browser dashboard** at `/` using `EventSource`
+- **SSE endpoint:** `GET /SSE/Stream`
+  - Streams `railUpdate` events with the current snapshot of all trains
+  - Supports optional query parameters for server-side filtering
+- **Filtering:**
+  - `awb` / `airwayBill` – airway bill number (exact or partial)
+  - `trainName` – train name (partial, case-insensitive)
+  - `carNumber` – car number (partial, case-insensitive)
+  - `station` – station code or name (partial, case-insensitive)
+  - `status` – `LOADED`, `IN_TRANSIT`, `DELIVERED`
+- **Realistic-ish simulation:**
+  - Uses station coordinates + Haversine distance
+  - Trains have speeds in km/h
+  - **TIME_SCALE** controls how fast simulated time advances
+  - Trains **stop** at stations for a dwell time window
+  - AWBs move from `LOADED` → `IN_TRANSIT` → `DELIVERED`
+- **Dashboard (`/`):**
+  - Shows connection status
+  - Live counts (trains, cars, AWBs)
+  - **SVG map view**:
+    - Stations rendered by lat/lon
+    - Trains plotted as moving dots
+  - Train list with:
+    - Name, current leg, progress bar
+    - Current coordinates
+  - Raw JSON of the last SSE message
 
 ---
 
-## Quick Start (Local or Codespaces)
+## Getting Started
+
+### 1. Install & run
 
 ```bash
 npm install
+cp .env.example .env   # then adjust if you like
 npm start
-```
+````
 
-By default the server listens on **port 3000**.
+By default the server listens on **`http://localhost:3000`**.
 
-In GitHub Codespaces, make sure port 3000 is forwarded/public and then:
+### 2. Open the dashboard
 
-- Open the **HTML dashboard** at:  
-  `https://<your-codespace-domain>/`
-- Or curl the SSE stream directly:  
-  `curl -N "https://<your-codespace-domain>/SSE/Stream"`
+* Go to: `http://localhost:3000/`
+* Or in Codespaces: `https://<your-codespace-domain>/`
 
-Locally you can use:
+You should see:
+
+* Connection indicator (Connected/Disconnected)
+* Filters at the top
+* A **map** showing stations + trains
+* A train list and a raw JSON panel
+
+The dashboard auto-connects to `/SSE/Stream`.
+
+### 3. SSE endpoint
+
+Basic SSE stream (all trains):
 
 ```bash
-curl -N "http://localhost:3000/SSE/Stream"
+curl http://localhost:3000/SSE/Stream
+```
+
+Filtered by train name:
+
+```bash
+curl "http://localhost:3000/SSE/Stream?trainName=Pacific"
+```
+
+Filtered by AWB:
+
+```bash
+curl "http://localhost:3000/SSE/Stream?awb=AWB-1"
+```
+
+Filtered by station + status:
+
+```bash
+curl "http://localhost:3000/SSE/Stream?station=CHI&status=IN_TRANSIT"
 ```
 
 ---
 
-## SSE Endpoint
+## Environment Variables (Realism Knobs)
 
-**Path:** `GET /SSE/Stream`  
-**Event type:** `railUpdate`
+All configuration options are in `.env.example`. You can copy that to `.env` and tweak as needed.
 
-Each event looks roughly like:
+| Variable             | Default | Description                                                                                                                                   |
+| -------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PORT`               | `3000`  | Port the Express app listens on.                                                                                                              |
+| `TICK_MS`            | `5000`  | How often the server pushes SSE updates (milliseconds).                                                                                       |
+| `TRAIN_COUNT`        | `10`    | How many trains to simulate.                                                                                                                  |
+| `MAX_CARS_PER_TRAIN` | `12`    | Maximum cars per train.                                                                                                                       |
+| `MAX_AWBS_PER_CAR`   | `5`     | Maximum airway bills per car.                                                                                                                 |
+| `TIME_SCALE`         | `60`    | **Time acceleration factor**: how much faster than real time the simulation runs. `1` = real time; `60` = 1 real second = 1 simulated minute. |
+| `MIN_DWELL_MINUTES`  | `5`     | Minimum **dwell time** (stop time) at a station, in **simulated minutes**.                                                                    |
+| `MAX_DWELL_MINUTES`  | `20`    | Maximum dwell time at a station, in simulated minutes.                                                                                        |
+
+### How TIME_SCALE and dwell work
+
+On each tick:
+
+* Real time step (hours) = `TICK_MS / 3,600,000`
+* Simulated time step (hours) = real time step × `TIME_SCALE`
+
+So for example:
+
+* `TICK_MS=5000` and `TIME_SCALE=60`:
+
+  * Every 5 real seconds ≈ 5 minutes of simulated time.
+* `TICK_MS=2000` and `TIME_SCALE=1`:
+
+  * Every 2 real seconds = 2 seconds of simulated time (near real-time).
+
+**Dwell time** at stations is chosen randomly between `MIN_DWELL_MINUTES` and `MAX_DWELL_MINUTES` (in simulated minutes). During dwell:
+
+* `speedKmh` is reported as `0`
+* The train location stays fixed at the station
+* AWB load/offload updates happen as trains arrive/depart
+
+---
+
+## API Overview
+
+### `GET /api/info`
+
+Simple health/info route:
+
+```bash
+curl http://localhost:3000/api/info
+```
+
+Example JSON:
 
 ```json
 {
-  "timestamp": "2025-01-01T12:34:56.789Z",
+  "status": "ok",
+  "message": "US Railway Cargo SSE mock server",
+  "sseEndpoint": "/SSE/Stream",
+  "example": {
+    "allData": "/SSE/Stream",
+    "filterByTrainName": "/SSE/Stream?trainName=Pacific",
+    "filterByAwb": "/SSE/Stream?awb=AWB-11001",
+    "filterByCar": "/SSE/Stream?carNumber=R1001",
+    "filterByStation": "/SSE/Stream?station=CHI",
+    "filterByStatus": "/SSE/Stream?status=IN_TRANSIT"
+  }
+}
+```
+
+### `GET /SSE/Stream`
+
+SSE endpoint. Responds with `text/event-stream` and emits `railUpdate` events:
+
+```text
+id: 1
+event: railUpdate
+data: { ...JSON payload... }
+
+id: 2
+event: railUpdate
+data: { ...JSON payload... }
+
+...
+```
+
+#### Query Parameters (all optional)
+
+* `awb` / `airwayBill` – filter by airway bill number (partial match allowed)
+* `trainName` – filter by train name
+* `carNumber` – filter by car number
+* `station` – filter by origin/destination/offload station code/name
+* `status` – `LOADED`, `IN_TRANSIT`, or `DELIVERED`
+
+If **no query parameters** are provided, all trains / cars / AWBs are returned.
+
+#### Example payload shape
+
+```json
+{
+  "timestamp": "2025-11-18T22:10:15.123Z",
   "filtersApplied": {
     "awb": null,
     "trainName": null,
@@ -77,14 +209,14 @@ Each event looks roughly like:
     {
       "id": "T1",
       "name": "Pacific Runner 1",
-      "speedKmh": 63,
+      "speedKmh": 65,
       "route": ["LA", "KC", "CHI", "NYC"],
       "fromStationCode": "KC",
       "toStationCode": "CHI",
-      "legProgress": 0.53,
+      "legProgress": 0.42,
       "currentLocation": {
-        "lat": 40.21,
-        "lon": -90.12
+        "lat": 40.12345,
+        "lon": -92.54321
       },
       "cars": [
         {
@@ -96,17 +228,17 @@ Each event looks roughly like:
               "originStationCode": "LA",
               "destStationCode": "CHI",
               "pieces": 4,
-              "weightKg": 8200,
+              "weightKg": 12000,
               "status": "IN_TRANSIT",
-              "lastUpdated": "2025-01-01T12:34:56.789Z",
-              "loadedAt": "2025-01-01T12:30:00.000Z",
+              "lastUpdated": "2025-11-18T22:10:15.123Z",
+              "loadedAt": "2025-11-18T20:05:00.000Z",
               "deliveredAt": null,
               "offloadedAtStationCode": null
             }
           ]
         }
       ],
-      "lastUpdated": "2025-01-01T12:34:56.789Z"
+      "lastUpdated": "2025-11-18T22:10:15.123Z"
     }
   ],
   "stationCatalog": [
@@ -118,105 +250,65 @@ Each event looks roughly like:
       "lat": 34.033,
       "lon": -118.238
     }
+    // ...
   ]
 }
 ```
 
+The **dashboard map** uses:
+
+* `stationCatalog[].lat/lon` for station dots
+* `trains[].currentLocation.lat/lon` for train dots
+
 ---
 
-## Query Parameters (Filters)
+## Using with Postman (optional)
 
-You can filter the stream on the server side by adding query parameters:
+If you include a Postman collection (e.g. `Mock-US-Rail-SSE.postman_collection.json`):
 
-- **By train name**
+1. Import it into Postman.
+2. Set the `baseUrl` collection variable, e.g.:
 
-  ```bash
-  curl -N "http://localhost:3000/SSE/Stream?trainName=Pacific"
-  ```
+   * `http://localhost:3000`
+   * or `https://<your-codespace-domain>`
+3. Use the prepared requests for:
 
-- **By airway bill**
+   * `/api/info`
+   * `/SSE/Stream` (all)
+   * `/SSE/Stream` with filters
 
-  ```bash
-  curl -N "http://localhost:3000/SSE/Stream?awb=AWB-11001"
-  ```
+Note: Postman will keep the connection open and stream `railUpdate` events under the **Body** tab.
 
-- **By car number**
+---
 
-  ```bash
-  curl -N "http://localhost:3000/SSE/Stream?carNumber=R1001"
-  ```
+## Tweaking for demos
 
-- **By station**
+A few handy presets:
 
-  (Matches origin/destination/offload station codes.)
+### Faster, more “arcade” demo
 
-  ```bash
-  curl -N "http://localhost:3000/SSE/Stream?station=CHI"
-  ```
-
-- **By status**
-
-  ```bash
-  curl -N "http://localhost:3000/SSE/Stream?status=IN_TRANSIT"
-  ```
-
-You can combine filters, e.g.:
-
-```bash
-curl -N "http://localhost:3000/SSE/Stream?awb=AWB-1&status=DELIVERED"
+```env
+TICK_MS=2000
+TIME_SCALE=120
+MIN_DWELL_MINUTES=2
+MAX_DWELL_MINUTES=5
+TRAIN_COUNT=8
 ```
 
----
+### Slower, more real-time feel
 
-## Environment Variables
-
-See `.env.example` for defaults:
-
-```bash
-PORT=3000           # Express port
-TICK_MS=2000        # How often to emit an SSE update (ms)
-TRAIN_COUNT=4       # Number of trains
-MAX_CARS_PER_TRAIN=12
-MAX_AWBS_PER_CAR=5
+```env
+TICK_MS=5000
+TIME_SCALE=10
+MIN_DWELL_MINUTES=10
+MAX_DWELL_MINUTES=30
+TRAIN_COUNT=12
 ```
 
-Create a `.env` file (based on `.env.example`) if you want to override defaults:
-
-```bash
-cp .env.example .env
-# edit .env
-```
-
----
-
-## Tiny HTML Dashboard
-
-The `public/index.html` file is a minimal dashboard that:
-
-- Connects to `/SSE/Stream` via `EventSource`
-- Lets you type filters (`awb`, `trainName`, `carNumber`, `station`, `status`)
-- Shows:
-  - A list of trains with route and current station-to-station leg
-  - A summary of cars and AWB counts
-  - Raw JSON payload for debugging
-
-In a browser (local or Codespaces):
-
-- Navigate to `http://localhost:3000/` **or**  
-  `https://<your-codespace-domain>/`
-
-Adjust filters and hit **Connect** to restart the SSE connection with new query params.
-
----
-
-## Using with Postman / iPaaS / Fusion
-
-- Use `GET /SSE/Stream` as a streaming endpoint (SSE).
-- Many HTTP tools (Postman, Bruno, curl, custom Node clients) can hit it directly.
-- For non-SSE clients, treat it as a long-lived HTTP response with `text/event-stream` and parse `data:` lines as NDJSON.
+You can mix and match these knobs to match your demo story (slow “overnight” freight vs. constant flow).
 
 ---
 
 ## License
 
-MIT – use, fork, and adapt freely for internal demos and experiments.
+Use freely for demos, training, and experimentation.
