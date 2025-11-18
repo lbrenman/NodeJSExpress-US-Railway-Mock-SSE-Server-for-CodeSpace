@@ -1,0 +1,150 @@
+{
+  "info": {
+    "name": "Mock US Rail SSE Server",
+    "_postman_id": "b4b8c7e4-0000-0000-0000-rail-sse-demo",
+    "description": "Postman collection for the Mock US Railway Cargo SSE Server.\n\nSet the `baseUrl` variable to your local or Codespaces base URL, e.g. `http://localhost:3000` or `https://<your-codespace-domain>`.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/info",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "info"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SSE - All Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/SSE/Stream",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "SSE",
+            "Stream"
+          ]
+        },
+        "description": "Connects to the SSE endpoint and receives continuous `railUpdate` events."
+      },
+      "response": []
+    },
+    {
+      "name": "SSE - Filter by Train Name",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/SSE/Stream?trainName=Pacific",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "SSE",
+            "Stream"
+          ],
+          "query": [
+            {
+              "key": "trainName",
+              "value": "Pacific"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SSE - Filter by Airway Bill",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/SSE/Stream?awb=AWB-1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "SSE",
+            "Stream"
+          ],
+          "query": [
+            {
+              "key": "awb",
+              "value": "AWB-1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SSE - Filter by Station & Status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/SSE/Stream?station=CHI&status=IN_TRANSIT",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "SSE",
+            "Stream"
+          ],
+          "query": [
+            {
+              "key": "station",
+              "value": "CHI"
+            },
+            {
+              "key": "status",
+              "value": "IN_TRANSIT"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
