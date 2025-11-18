@@ -14,10 +14,13 @@
 //
 // Major env vars (see .env.example):
 //   - PORT=3000
-//   - TICK_MS=2000
-//   - TRAIN_COUNT=4
+//   - TICK_MS=5000
+//   - TRAIN_COUNT=10
 //   - MAX_CARS_PER_TRAIN=12
 //   - MAX_AWBS_PER_CAR=5
+//   - TIME_SCALE=60
+//   - MIN_DWELL_MINUTES=5
+//   - MAX_DWELL_MINUTES=20
 
 const express = require("express");
 const cors = require("cors");
@@ -31,10 +34,18 @@ app.use(express.static("public"));
 
 // ----- Configuration via env vars -----
 const PORT = parseInt(process.env.PORT || "3000", 10);
-const TICK_MS = parseInt(process.env.TICK_MS || "2000", 10);
-const TRAIN_COUNT = parseInt(process.env.TRAIN_COUNT || "4", 10);
+const TICK_MS = parseInt(process.env.TICK_MS || "5000", 10);
+const TRAIN_COUNT = parseInt(process.env.TRAIN_COUNT || "10", 10);
 const MAX_CARS_PER_TRAIN = parseInt(process.env.MAX_CARS_PER_TRAIN || "12", 10);
 const MAX_AWBS_PER_CAR = parseInt(process.env.MAX_AWBS_PER_CAR || "5", 10);
+
+// How much faster than real time the sim runs.
+// 1 = true real time, 60 = 1 real second = 1 simulated minute, etc.
+const TIME_SCALE = parseFloat(process.env.TIME_SCALE || "60");
+
+// How long trains dwell (stop) at stations, in simulated minutes.
+const MIN_DWELL_MINUTES = parseInt(process.env.MIN_DWELL_MINUTES || "5", 10);
+const MAX_DWELL_MINUTES = parseInt(process.env.MAX_DWELL_MINUTES || "20", 10);
 
 // ----- Basic US station network (fictional cargo hubs) -----
 const STATIONS = [
@@ -60,7 +71,7 @@ const STATIONS = [
     city: "Chicago",
     state: "IL",
     lat: 41.874,
-    lon: -87.640,
+    lon: -87.64,
   },
   {
     code: "MEM",
@@ -105,6 +116,22 @@ const randChoice = (arr) => arr[randInt(0, arr.length - 1)];
 // Find station by code
 function stationByCode(code) {
   return STATIONS.find((s) => s.code === code);
+}
+
+// Haversine distance in km between two lat/lon points
+function haversineKm(lat1, lon1, lat2, lon2) {
+  const R = 6371; // km
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c || 1; // avoid division by zero
 }
 
 // Create random car number and airway bill numbers
@@ -170,17 +197,20 @@ function createInitialTrains() {
 
     trains.push({
       id: `T${i + 1}`,
-      name: randChoice([
-        "Pacific Runner",
-        "Continental Freight",
-        "Atlantic Express",
-        "Heartland Cargo",
-        "Mountain Hauler",
-      ]) + ` ${i + 1}`,
+      name:
+        randChoice([
+          "Pacific Runner",
+          "Continental Freight",
+          "Atlantic Express",
+          "Heartland Cargo",
+          "Mountain Hauler",
+        ]) + ` ${i + 1}`,
       route, // array of station codes
       currentLegIndex: 0, // index into route, between route[i] -> route[i+1]
       legProgress: Math.random(), // 0..1 between the two stations
       speedKmh,
+      displaySpeedKmh: speedKmh,
+      dwellRemainingHours: 0,
       cars,
     });
   }
@@ -188,26 +218,62 @@ function createInitialTrains() {
 
 // move trains along their routes and update airway bill statuses
 function updateTrains() {
-  const now = new Date().toISOString();
+  const nowIso = new Date().toISOString();
+  // How many *simulated* hours pass per real tick:
+  const dtHours = (TICK_MS / 3600000) * TIME_SCALE;
 
   trains.forEach((train) => {
     const { route } = train;
-    if (route.length < 2) return;
+    if (!route || route.length < 2) return;
 
-    // Move along the current leg
-    // Instead of using real distances, use a randomized progress per tick
-    const progressIncrement = 0.1 + Math.random() * 0.25; // 0.1 to 0.35
+    // 1) If currently dwelling at a station, just count down dwell timer
+    if (train.dwellRemainingHours && train.dwellRemainingHours > 0) {
+      train.dwellRemainingHours = Math.max(
+        0,
+        train.dwellRemainingHours - dtHours
+      );
+      train.displaySpeedKmh = 0; // show as stopped
+      train.lastUpdated = nowIso;
+      return;
+    }
+
+    // 2) If we just finished a dwell and legProgress was 1 (arrived previously),
+    //    advance to the next leg and reset progress.
+    if (train.legProgress >= 1) {
+      train.currentLegIndex++;
+      if (train.currentLegIndex >= route.length - 1) {
+        train.currentLegIndex = 0;
+      }
+      train.legProgress = 0;
+    }
+
+    const fromCode = route[train.currentLegIndex];
+    const toCode = route[train.currentLegIndex + 1];
+    const fromStation = stationByCode(fromCode);
+    const toStation = stationByCode(toCode);
+
+    if (!fromStation || !toStation) return;
+
+    const legDistanceKm = haversineKm(
+      fromStation.lat,
+      fromStation.lon,
+      toStation.lat,
+      toStation.lon
+    );
+
+    // How far we move this tick (km) at current speed in simulated time
+    const distanceThisTickKm = train.speedKmh * dtHours;
+    const progressIncrement = distanceThisTickKm / legDistanceKm;
+
     train.legProgress += progressIncrement;
+    train.displaySpeedKmh = train.speedKmh;
 
     if (train.legProgress >= 1) {
-      // We arrived at the next station
-      const fromCode = route[train.currentLegIndex];
-      const toCode = route[train.currentLegIndex + 1];
-
+      // We arrived at the destination station this tick
+      train.legProgress = 1;
       const arrivalStationCode = toCode;
-      const arrivalStation = stationByCode(arrivalStationCode);
 
-      // Update AWBs whose destination is this station -> DELIVERED
+      // Update AWBs: mark delivered + load some new ones
       train.cars.forEach((car) => {
         car.airwayBills.forEach((awb) => {
           if (
@@ -215,13 +281,13 @@ function updateTrains() {
             awb.status !== "DELIVERED"
           ) {
             awb.status = "DELIVERED";
-            awb.lastUpdated = now;
-            awb.deliveredAt = now;
+            awb.lastUpdated = nowIso;
+            awb.deliveredAt = nowIso;
             awb.offloadedAtStationCode = arrivalStationCode;
           }
         });
 
-        // Randomly load a few new AWBs at this station
+        // Randomly load a new AWB at this station
         if (Math.random() < 0.35) {
           const newAwb = {
             awbNumber: generateAwbNumber(
@@ -235,8 +301,8 @@ function updateTrains() {
             pieces: randInt(1, 10),
             weightKg: randInt(500, 20000),
             status: "LOADED",
-            lastUpdated: now,
-            loadedAt: now,
+            lastUpdated: nowIso,
+            loadedAt: nowIso,
             deliveredAt: null,
             offloadedAtStationCode: null,
           };
@@ -244,38 +310,36 @@ function updateTrains() {
         }
       });
 
-      // Advance to next leg
-      train.currentLegIndex++;
-      if (train.currentLegIndex >= route.length - 1) {
-        // Reached end of route; loop back
-        train.currentLegIndex = 0;
-      }
-
-      train.legProgress = 0;
-
-      // Occasionally change speed a bit
-      if (Math.random() < 0.3) {
-        train.speedKmh = Math.max(
-          30,
-          Math.min(90, train.speedKmh + randInt(-10, 10))
-        );
-      }
+      // Set a realistic-ish dwell time at this station
+      const dwellMinutes = randInt(MIN_DWELL_MINUTES, MAX_DWELL_MINUTES);
+      train.dwellRemainingHours = dwellMinutes / 60;
+      train.displaySpeedKmh = 0;
     } else {
-      // While in transit, mark LOADED -> IN_TRANSIT for AWBs whose origin is current "from" station
-      const fromCode = route[train.currentLegIndex];
+      // Still in transit: LOADED -> IN_TRANSIT shortly after leaving origin
+      const originCode = route[train.currentLegIndex];
       train.cars.forEach((car) => {
         car.airwayBills.forEach((awb) => {
           if (
-            awb.originStationCode === fromCode &&
+            awb.originStationCode === originCode &&
             awb.status === "LOADED" &&
-            train.legProgress > 0.1
+            train.legProgress > 0.05
           ) {
             awb.status = "IN_TRANSIT";
-            awb.lastUpdated = now;
+            awb.lastUpdated = nowIso;
           }
         });
       });
+
+      // Occasionally tweak speed a bit
+      if (Math.random() < 0.05) {
+        train.speedKmh = Math.max(
+          30,
+          Math.min(110, train.speedKmh + randInt(-5, 5))
+        );
+      }
     }
+
+    train.lastUpdated = nowIso;
   });
 }
 
@@ -284,23 +348,65 @@ function getTrainSnapshots() {
   const now = new Date().toISOString();
 
   return trains.map((train) => {
-    const fromCode = train.route[train.currentLegIndex];
-    const toCode = train.route[train.currentLegIndex + 1] || fromCode;
+    const route = train.route;
+    const baseSpeed = train.displaySpeedKmh ?? train.speedKmh;
+
+    // If dwelling at a station after arrival
+    if (
+      train.dwellRemainingHours &&
+      train.dwellRemainingHours > 0 &&
+      train.legProgress >= 1
+    ) {
+      const stationCode =
+        route[train.currentLegIndex + 1] || route[train.currentLegIndex];
+      const station = stationByCode(stationCode) || {};
+      return {
+        id: train.id,
+        name: train.name,
+        speedKmh: 0,
+        route,
+        fromStationCode: stationCode,
+        toStationCode: stationCode,
+        legProgress: 0,
+        currentLocation: {
+          lat: station.lat ?? null,
+          lon: station.lon ?? null,
+        },
+        cars: train.cars,
+        lastUpdated: now,
+      };
+    }
+
+    const fromCode = route[train.currentLegIndex];
+    const toCode = route[train.currentLegIndex + 1] || fromCode;
     const fromStation = stationByCode(fromCode);
     const toStation = stationByCode(toCode);
 
-    // Linear interpolation between station coordinates
+    if (!fromStation || !toStation) {
+      return {
+        id: train.id,
+        name: train.name,
+        speedKmh: baseSpeed,
+        route,
+        fromStationCode: fromCode,
+        toStationCode: toCode,
+        legProgress: train.legProgress,
+        currentLocation: { lat: null, lon: null },
+        cars: train.cars,
+        lastUpdated: now,
+      };
+    }
+
+    // Linear interpolation along the leg
     const t = Math.min(Math.max(train.legProgress, 0), 1);
-    const lat =
-      fromStation.lat + (toStation.lat - fromStation.lat) * t;
-    const lon =
-      fromStation.lon + (toStation.lon - fromStation.lon) * t;
+    const lat = fromStation.lat + (toStation.lat - fromStation.lat) * t;
+    const lon = fromStation.lon + (toStation.lon - fromStation.lon) * t;
 
     return {
       id: train.id,
       name: train.name,
-      speedKmh: train.speedKmh,
-      route: train.route,
+      speedKmh: baseSpeed,
+      route,
       fromStationCode: fromCode,
       toStationCode: toCode,
       legProgress: parseFloat(t.toFixed(3)),
@@ -477,10 +583,13 @@ app.listen(PORT, () => {
     `[Rail SSE] Server listening on port ${PORT}. SSE endpoint: /SSE/Stream`
   );
   console.log(
-    `[Rail SSE] Env: TICK_MS=%d, TRAINS=%d, MAX_CARS_PER_TRAIN=%d, MAX_AWBS_PER_CAR=%d`,
+    `[Rail SSE] Env: TICK_MS=%d, TRAINS=%d, MAX_CARS_PER_TRAIN=%d, MAX_AWBS_PER_CAR=%d, TIME_SCALE=%d, DWELL=%d-%d min`,
     TICK_MS,
     TRAIN_COUNT,
     MAX_CARS_PER_TRAIN,
-    MAX_AWBS_PER_CAR
+    MAX_AWBS_PER_CAR,
+    TIME_SCALE,
+    MIN_DWELL_MINUTES,
+    MAX_DWELL_MINUTES
   );
 });

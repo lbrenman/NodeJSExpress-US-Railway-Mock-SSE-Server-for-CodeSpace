@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>US Railway Cargo SSE Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta nameviewport="width=device-width, initial-scale=1.0" />
   <style>
     :root {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -147,7 +147,7 @@
     }
 
     .train-list {
-      max-height: 420px;
+      max-height: 260px;
       overflow: auto;
       margin-top: 0.5rem;
       padding-right: 0.25rem;
@@ -258,9 +258,65 @@
       opacity: 0.8;
     }
 
+    /* Map styles */
+    #map-container {
+      margin-top: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #rail-map {
+      width: 100%;
+      height: 220px;
+      border-radius: 0.75rem;
+      background: radial-gradient(circle at top, #111827, #020617 60%);
+      border: 1px solid #1f2937;
+      box-sizing: border-box;
+    }
+
+    .map-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.25rem;
+    }
+
+    .map-legend {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .legend-dot-station {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #fbbf24;
+    }
+
+    .legend-dot-train {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #38bdf8;
+    }
+
     @media (max-width: 900px) {
       .app {
         grid-template-columns: 1fr;
+      }
+      #rail-map {
+        height: 200px;
+      }
+      .train-list {
+        max-height: 220px;
       }
     }
   </style>
@@ -327,6 +383,23 @@
         </div>
       </div>
 
+      <!-- Map -->
+      <div id="map-container">
+        <svg id="rail-map"></svg>
+        <div class="map-caption">
+          <span>US schematic map · trains and stations</span>
+          <div class="map-legend">
+            <span class="legend-item">
+              <span class="legend-dot-station"></span> Station
+            </span>
+            <span class="legend-item">
+              <span class="legend-dot-train"></span> Train
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Train list -->
       <div class="train-list" id="train-list"></div>
     </div>
 
@@ -353,6 +426,7 @@
     const rawJson = document.getElementById("raw-json");
     const trainList = document.getElementById("train-list");
     const filtersPill = document.getElementById("filters-pill");
+    const railMap = document.getElementById("rail-map");
 
     const awbInput = document.getElementById("awb");
     const trainNameInput = document.getElementById("trainName");
@@ -365,6 +439,7 @@
     const statAwbs = document.getElementById("stat-awbs");
 
     let es = null;
+    let lastStationCatalog = [];
 
     function buildQueryString() {
       const params = new URLSearchParams();
@@ -424,13 +499,14 @@
 
         const meta = document.createElement("div");
         meta.className = "train-meta";
-        meta.textContent = `Speed ${t.speedKmh} km/h · Leg ${t.fromStationCode} → ${t.toStationCode} · ${Math.round((t.legProgress || 0) * 100)}%`;
+        const progressPct = Math.round((t.legProgress || 0) * 100);
+        meta.textContent = `Speed ${t.speedKmh} km/h · Leg ${t.fromStationCode} → ${t.toStationCode} · ${progressPct}%`;
 
         left.appendChild(name);
         left.appendChild(meta);
 
         const pill = document.createElement("div");
-        pill.className = "pill green";
+        pill.className = "pill.green";
         pill.textContent = `${cars.length} cars`;
 
         header.appendChild(left);
@@ -448,12 +524,17 @@
         progOuter.className = "prog-bar";
         const progInner = document.createElement("div");
         progInner.className = "prog-fill";
-        progInner.style.width = `${Math.round((t.legProgress || 0) * 100)}%`;
+        progInner.style.width = `${progressPct}%`;
         progOuter.appendChild(progInner);
 
         const carsSummary = document.createElement("div");
         carsSummary.className = "cars-summary";
-        carsSummary.textContent = `Lat ${t.currentLocation?.lat}, Lon ${t.currentLocation?.lon}`;
+        const lat = t.currentLocation?.lat;
+        const lon = t.currentLocation?.lon;
+        carsSummary.textContent =
+          lat != null && lon != null
+            ? `Lat ${lat}, Lon ${lon}`
+            : "Location unknown";
 
         div.appendChild(header);
         div.appendChild(route);
@@ -465,6 +546,95 @@
 
       statCars.textContent = totalCars.toString();
       statAwbs.textContent = totalAwbs.toString();
+    }
+
+    function computeBounds(stations) {
+      if (!stations || stations.length === 0) return null;
+      let minLat = Infinity, maxLat = -Infinity;
+      let minLon = Infinity, maxLon = -Infinity;
+
+      stations.forEach((s) => {
+        if (typeof s.lat === "number" && typeof s.lon === "number") {
+          if (s.lat < minLat) minLat = s.lat;
+          if (s.lat > maxLat) maxLat = s.lat;
+          if (s.lon < minLon) minLon = s.lon;
+          if (s.lon > maxLon) maxLon = s.lon;
+        }
+      });
+
+      if (!isFinite(minLat) || !isFinite(maxLat) || !isFinite(minLon) || !isFinite(maxLon)) {
+        return null;
+      }
+
+      // Slight padding
+      const latPad = (maxLat - minLat) * 0.1;
+      const lonPad = (maxLon - minLon) * 0.1;
+
+      return {
+        minLat: minLat - latPad,
+        maxLat: maxLat + latPad,
+        minLon: minLon - lonPad,
+        maxLon: maxLon + lonPad,
+      };
+    }
+
+    function projectPoint(lat, lon, bounds, width, height) {
+      const { minLat, maxLat, minLon, maxLon } = bounds;
+      const x = ((lon - minLon) / (maxLon - minLon || 1)) * width;
+      // Invert y because SVG y grows downward
+      const y = ((maxLat - lat) / (maxLat - minLat || 1)) * height;
+      return { x, y };
+    }
+
+    function renderMap(payload) {
+      const trains = payload.trains || [];
+      const stations = payload.stationCatalog || lastStationCatalog || [];
+      if (stations.length === 0) {
+        railMap.innerHTML = "";
+        return;
+      }
+      lastStationCatalog = stations;
+
+      const rect = railMap.getBoundingClientRect();
+      const width = rect.width || 600;
+      const height = rect.height || 220;
+
+      const bounds = computeBounds(stations);
+      if (!bounds) {
+        railMap.innerHTML = "";
+        return;
+      }
+
+      // Build SVG content
+      let svg = "";
+      svg += `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">`;
+      // background grid lines for a subtle map feel
+      svg += `<defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#111827" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="${width}" height="${height}" fill="url(#grid)"/>`;
+
+      // Draw stations
+      stations.forEach((s) => {
+        if (typeof s.lat !== "number" || typeof s.lon !== "number") return;
+        const { x, y } = projectPoint(s.lat, s.lon, bounds, width, height);
+        svg += `<circle cx="${x}" cy="${y}" r="4" fill="#fbbf24" />`;
+        svg += `<text x="${x + 6}" y="${y - 4}" font-size="10" fill="#9ca3af">${s.code}</text>`;
+      });
+
+      // Draw trains
+      trains.forEach((t) => {
+        const lat = t.currentLocation?.lat;
+        const lon = t.currentLocation?.lon;
+        if (typeof lat !== "number" || typeof lon !== "number") return;
+        const { x, y } = projectPoint(lat, lon, bounds, width, height);
+        svg += `<circle cx="${x}" cy="${y}" r="4.5" fill="#38bdf8" />`;
+      });
+
+      svg += `</svg>`;
+      railMap.innerHTML = svg;
     }
 
     function connect() {
@@ -488,6 +658,7 @@
           const payload = JSON.parse(ev.data);
           rawJson.textContent = JSON.stringify(payload, null, 2);
           renderTrains(payload);
+          renderMap(payload);
         } catch (e) {
           console.error("Error parsing SSE payload", e);
         }
