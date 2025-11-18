@@ -44,6 +44,8 @@ It’s designed to be easy to run locally or in **GitHub Codespaces** and to act
     - Current coordinates
   - Raw JSON of the last SSE message
 
+  ![Imgur](https://imgur.com/qM7eno1.png)
+
 ---
 
 ## Getting Started
@@ -85,6 +87,8 @@ Filtered by train name:
 ```bash
 curl "http://localhost:3000/SSE/Stream?trainName=Pacific"
 ```
+
+![Imgur](https://imgur.com/VPcDSCO.png)
 
 Filtered by AWB:
 
