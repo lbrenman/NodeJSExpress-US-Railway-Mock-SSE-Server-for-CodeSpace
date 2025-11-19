@@ -1,0 +1,3830 @@
+{
+    "timestamp": "2025-11-19T13:19:24.040Z",
+    "filtersApplied": {
+        "awb": null,
+        "trainName": null,
+        "carNumber": null,
+        "station": null,
+        "status": null
+    },
+    "trains": [
+        {
+            "id": "T1",
+            "name": "Continental Freight 1",
+            "speedKmh": 61,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.581,
+            "currentLocation": {
+                "lat": 40.26471,
+                "lon": -91.68239
+            },
+            "cars": [
+                {
+                    "carNumber": "R1001",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-110001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 15461,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-110002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 1486,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-110003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 14379,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-110004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 3524,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-110005",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 13165,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1002",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-120001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 2,
+                            "weightKg": 17363,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-120002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 13620,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1003",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-130001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 7,
+                            "weightKg": 17988,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-130002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 15425,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-130003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 17288,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1004",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-140001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 15695,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-140002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 7,
+                            "weightKg": 12545,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1005",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-150001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 12106,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-150002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 4999,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-150003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 16115,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-150004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 2,
+                            "weightKg": 4921,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1006",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-160001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 15638,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1007",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-170001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 7,
+                            "weightKg": 18198,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-170002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 17884,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-170003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 4033,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-170004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 17036,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1008",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-180001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 18344,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-180002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 10,
+                            "weightKg": 14427,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-180003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 19942,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-180004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 12489,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R1009",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-190001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 11619,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T2",
+            "name": "Atlantic Express 2",
+            "speedKmh": 58,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.647,
+            "currentLocation": {
+                "lat": 40.0816,
+                "lon": -92.14236
+            },
+            "cars": [
+                {
+                    "carNumber": "R2001",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-210001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 16374,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-210002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 9849,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-210003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 5976,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-210004",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 762,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-210005",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 2755,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2002",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-220001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 10,
+                            "weightKg": 15874,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-220002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 7643,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-220003",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 13435,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-220004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 8549,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2003",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-230001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 15376,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-230002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 8026,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-230003",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 12787,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2004",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-240001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 1669,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-240002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 14540,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-240003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 10310,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-240004",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 17149,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2005",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-250001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 19725,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-250002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 5601,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-250003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 14944,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2006",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-260001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 839,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-260002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 3044,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-260003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 13320,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2007",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-270001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 8386,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R2008",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-280001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 9806,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-280002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 14019,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-280003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 841,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-280004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 16975,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-280005",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 18538,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T3",
+            "name": "Heartland Cargo 3",
+            "speedKmh": 45,
+            "route": [
+                "LA",
+                "MEM",
+                "ATL",
+                "NYC"
+            ],
+            "fromStationCode": "LA",
+            "toStationCode": "MEM",
+            "legProgress": 0.123,
+            "currentLocation": {
+                "lat": 34.17039,
+                "lon": -114.76766
+            },
+            "cars": [
+                {
+                    "carNumber": "R3001",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-310001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 9563,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-320001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 10,
+                            "weightKg": 10024,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-320002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 5652,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3003",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-330001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 15198,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-330002",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 14899,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-330003",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 10020,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3004",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-340001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 5411,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-340002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 14685,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-340003",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 1,
+                            "weightKg": 16005,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.655Z",
+                            "loadedAt": "2025-11-19T13:18:12.655Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3005",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-350001",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 14544,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-350002",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 12498,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-350003",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 8,
+                            "weightKg": 12967,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-350004",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 3319,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-350005",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 2,
+                            "weightKg": 12673,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3006",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-360001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 11463,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3007",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-370001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 1,
+                            "weightKg": 17494,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-370002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 8853,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3008",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-380001",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 4594,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-380002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 9,
+                            "weightKg": 17219,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-380003",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 10592,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-380004",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 10,
+                            "weightKg": 19614,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3009",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-390001",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 2685,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3010",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-3100001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 1,
+                            "weightKg": 8384,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3100002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 4865,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3100003",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 14679,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3100004",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 8,
+                            "weightKg": 14191,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3100005",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 10791,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3011",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-3110001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 12039,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3110002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 6,
+                            "weightKg": 17273,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R3012",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-3120001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 1,
+                            "weightKg": 14620,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3120002",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 12973,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-3120003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 17185,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T4",
+            "name": "Continental Freight 4",
+            "speedKmh": 48,
+            "route": [
+                "NYC",
+                "CHI",
+                "KC",
+                "LA"
+            ],
+            "fromStationCode": "NYC",
+            "toStationCode": "CHI",
+            "legProgress": 0.951,
+            "currentLocation": {
+                "lat": 41.81701,
+                "lon": -86.97074
+            },
+            "cars": [
+                {
+                    "carNumber": "R4001",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-410001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 8,
+                            "weightKg": 12092,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-410002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 4,
+                            "weightKg": 3228,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-410003",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 10,
+                            "weightKg": 17165,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-410004",
+                            "originStationCode": "NYC",
+                            "destStationCode": "CHI",
+                            "pieces": 2,
+                            "weightKg": 15371,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R4002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-420001",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 10,
+                            "weightKg": 6421,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-420002",
+                            "originStationCode": "NYC",
+                            "destStationCode": "LA",
+                            "pieces": 3,
+                            "weightKg": 12847,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R4003",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-430001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 3296,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-430002",
+                            "originStationCode": "NYC",
+                            "destStationCode": "CHI",
+                            "pieces": 7,
+                            "weightKg": 17390,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-430003",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 1,
+                            "weightKg": 12360,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-430004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 6,
+                            "weightKg": 1085,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R4004",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-440001",
+                            "originStationCode": "NYC",
+                            "destStationCode": "KC",
+                            "pieces": 8,
+                            "weightKg": 6796,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-440002",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 2,
+                            "weightKg": 11454,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-440003",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 10,
+                            "weightKg": 11956,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R4005",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-450001",
+                            "originStationCode": "NYC",
+                            "destStationCode": "LA",
+                            "pieces": 7,
+                            "weightKg": 19499,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-450002",
+                            "originStationCode": "NYC",
+                            "destStationCode": "CHI",
+                            "pieces": 7,
+                            "weightKg": 4309,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T5",
+            "name": "Continental Freight 5",
+            "speedKmh": 57,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.955,
+            "currentLocation": {
+                "lat": 39.22954,
+                "lon": -94.28265
+            },
+            "cars": [
+                {
+                    "carNumber": "R5001",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-510001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 3136,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-520001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 19383,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-520002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 6,
+                            "weightKg": 16260,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-520003",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 9120,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-520004",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 14898,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5003",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-530001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 810,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-530002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 8,
+                            "weightKg": 4465,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5004",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-540001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 10887,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-540002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 1,
+                            "weightKg": 17972,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5005",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-550001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 10566,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5006",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-560001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 14223,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-560002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 8781,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-560003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 12795,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-560004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 11415,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5007",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-570001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 15965,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-570002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 8259,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-570003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 2426,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5008",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-580001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 11697,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-580002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 12139,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-580003",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 8,
+                            "weightKg": 17093,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-580004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 17083,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-580005",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 12980,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5009",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-590001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 1,
+                            "weightKg": 10147,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-590002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 19780,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-590003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 1741,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5010",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-5100001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 4270,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-5100002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 18153,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R5011",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-5110001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 9,
+                            "weightKg": 10694,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-5110002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 11080,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-5110003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 19429,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-5110004",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 5,
+                            "weightKg": 8651,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T6",
+            "name": "Pacific Runner 6",
+            "speedKmh": 44,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.486,
+            "currentLocation": {
+                "lat": 40.52704,
+                "lon": -91.02345
+            },
+            "cars": [
+                {
+                    "carNumber": "R6001",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-610001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 2210,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-610002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 17577,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-610003",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 10194,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-610004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 16689,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R6002",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-620001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 10914,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-620002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 11348,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R6003",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-630001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 8073,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-630002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 14978,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-630003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 1566,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-630004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 3010,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-630005",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 12166,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R6004",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-640001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 17846,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-640002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 3919,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-640003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 4480,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R6005",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-650001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 18930,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-650002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 7,
+                            "weightKg": 4923,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-650003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 5056,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-650004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 17074,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-650005",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 6,
+                            "weightKg": 10801,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R6006",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-660001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 13872,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T7",
+            "name": "Atlantic Express 7",
+            "speedKmh": 45,
+            "route": [
+                "LA",
+                "MEM",
+                "ATL",
+                "NYC"
+            ],
+            "fromStationCode": "LA",
+            "toStationCode": "MEM",
+            "legProgress": 0.411,
+            "currentLocation": {
+                "lat": 34.49113,
+                "lon": -106.66603
+            },
+            "cars": [
+                {
+                    "carNumber": "R7001",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-710001",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 19114,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-710002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 9319,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-720001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 16743,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-720002",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 2,
+                            "weightKg": 17347,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-720003",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 9,
+                            "weightKg": 14469,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7003",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-730001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 1431,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-730002",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 17741,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7004",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-740001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 5413,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-740002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 6,
+                            "weightKg": 11069,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7005",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-750001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 17180,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-750002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 6,
+                            "weightKg": 5754,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-750003",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 6,
+                            "weightKg": 10437,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-750004",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 4734,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-750005",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 3308,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7006",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-760001",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 1,
+                            "weightKg": 14688,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-760002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 17501,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7007",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-770001",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 8007,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-770002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 11841,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-770003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 9,
+                            "weightKg": 14121,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-770004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 12905,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7008",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-780001",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 7,
+                            "weightKg": 17049,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-780002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 4,
+                            "weightKg": 6811,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-780003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 8,
+                            "weightKg": 1252,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-780004",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 13125,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-780005",
+                            "originStationCode": "LA",
+                            "destStationCode": "MEM",
+                            "pieces": 10,
+                            "weightKg": 8510,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7009",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-790001",
+                            "originStationCode": "LA",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 19465,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-790002",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 8,
+                            "weightKg": 5287,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-790003",
+                            "originStationCode": "LA",
+                            "destStationCode": "NYC",
+                            "pieces": 7,
+                            "weightKg": 2802,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-790004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 3,
+                            "weightKg": 14151,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R7010",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-7100001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 9085,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-7100002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 18019,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-7100003",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 4,
+                            "weightKg": 9971,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-7100004",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 5,
+                            "weightKg": 7139,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-7100005",
+                            "originStationCode": "ATL",
+                            "destStationCode": "NYC",
+                            "pieces": 10,
+                            "weightKg": 9782,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T8",
+            "name": "Pacific Runner 8",
+            "speedKmh": 49,
+            "route": [
+                "NYC",
+                "CHI",
+                "KC",
+                "LA"
+            ],
+            "fromStationCode": "NYC",
+            "toStationCode": "CHI",
+            "legProgress": 0.267,
+            "currentLocation": {
+                "lat": 41.0228,
+                "lon": -77.64413
+            },
+            "cars": [
+                {
+                    "carNumber": "R8001",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-810001",
+                            "originStationCode": "NYC",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 3081,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-810002",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 6,
+                            "weightKg": 12234,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-810003",
+                            "originStationCode": "NYC",
+                            "destStationCode": "LA",
+                            "pieces": 4,
+                            "weightKg": 5484,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R8002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-820001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 10,
+                            "weightKg": 7871,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R8003",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-830001",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 7,
+                            "weightKg": 14577,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-830002",
+                            "originStationCode": "KC",
+                            "destStationCode": "LA",
+                            "pieces": 3,
+                            "weightKg": 6647,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-830003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 4,
+                            "weightKg": 5239,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-830004",
+                            "originStationCode": "NYC",
+                            "destStationCode": "LA",
+                            "pieces": 3,
+                            "weightKg": 19982,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R8004",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-840001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 13968,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-840002",
+                            "originStationCode": "NYC",
+                            "destStationCode": "LA",
+                            "pieces": 4,
+                            "weightKg": 1284,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R8005",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-850001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 9,
+                            "weightKg": 15374,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-850002",
+                            "originStationCode": "NYC",
+                            "destStationCode": "CHI",
+                            "pieces": 7,
+                            "weightKg": 11739,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-850003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 12579,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R8006",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-860001",
+                            "originStationCode": "NYC",
+                            "destStationCode": "KC",
+                            "pieces": 10,
+                            "weightKg": 16481,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-860002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "LA",
+                            "pieces": 1,
+                            "weightKg": 3338,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-860003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 4716,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T9",
+            "name": "Continental Freight 9",
+            "speedKmh": 54,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.779,
+            "currentLocation": {
+                "lat": 39.71727,
+                "lon": -93.05751
+            },
+            "cars": [
+                {
+                    "carNumber": "R9001",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-910001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 7088,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-910002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 11012,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-910003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 5,
+                            "weightKg": 10247,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-910004",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 15894,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-910005",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 9537,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9002",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-920001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 3726,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-920002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 1249,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9003",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-930001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 5,
+                            "weightKg": 15689,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-930002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 6,
+                            "weightKg": 8273,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-930003",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 15527,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9004",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-940001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 8272,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-940002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 10444,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9005",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-950001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 5844,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-950002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 3993,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9006",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-960001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 1,
+                            "weightKg": 12990,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-960002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 7,
+                            "weightKg": 7437,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-960003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 4,
+                            "weightKg": 13033,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-960004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 3663,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9007",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-970001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 4,
+                            "weightKg": 6075,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9008",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-980001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 17400,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9009",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-990001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 1590,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9010",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-9100001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 10,
+                            "weightKg": 1058,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9100002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 9271,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9011",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-9110001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 7,
+                            "weightKg": 14325,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9110002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 10,
+                            "weightKg": 14936,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9110003",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 10,
+                            "weightKg": 12073,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9110004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 12792,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9110005",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 841,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R9012",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-9120001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 10,
+                            "weightKg": 5285,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9120002",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 2,
+                            "weightKg": 3884,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-9120003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 17831,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        },
+        {
+            "id": "T10",
+            "name": "Atlantic Express 10",
+            "speedKmh": 65,
+            "route": [
+                "CHI",
+                "KC",
+                "MEM",
+                "ATL"
+            ],
+            "fromStationCode": "CHI",
+            "toStationCode": "KC",
+            "legProgress": 0.735,
+            "currentLocation": {
+                "lat": 39.83902,
+                "lon": -92.7517
+            },
+            "cars": [
+                {
+                    "carNumber": "R10001",
+                    "type": "BOXCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1010001",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 7893,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1010002",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 2,
+                            "weightKg": 10124,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10002",
+                    "type": "TANK",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1020001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 4,
+                            "weightKg": 10315,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10003",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1030001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 3,
+                            "weightKg": 3333,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10004",
+                    "type": "FLATCAR",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1040001",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 14399,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1040002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "MEM",
+                            "pieces": 1,
+                            "weightKg": 9974,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1040003",
+                            "originStationCode": "CHI",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 9230,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1040004",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 15339,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10005",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1050001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 898,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10006",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1060001",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 3,
+                            "weightKg": 17436,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1060002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 11926,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1060003",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 4555,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1060004",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 11567,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1060005",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 9,
+                            "weightKg": 715,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10007",
+                    "type": "INTERMODAL",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1070001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 4358,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1070002",
+                            "originStationCode": "CHI",
+                            "destStationCode": "KC",
+                            "pieces": 10,
+                            "weightKg": 19566,
+                            "status": "IN_TRANSIT",
+                            "lastUpdated": "2025-11-19T13:18:32.806Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1070003",
+                            "originStationCode": "KC",
+                            "destStationCode": "MEM",
+                            "pieces": 3,
+                            "weightKg": 6824,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                },
+                {
+                    "carNumber": "R10008",
+                    "type": "HOPPER",
+                    "airwayBills": [
+                        {
+                            "awbNumber": "AWB-1080001",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 8,
+                            "weightKg": 7434,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1080002",
+                            "originStationCode": "MEM",
+                            "destStationCode": "ATL",
+                            "pieces": 6,
+                            "weightKg": 9587,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        },
+                        {
+                            "awbNumber": "AWB-1080003",
+                            "originStationCode": "KC",
+                            "destStationCode": "ATL",
+                            "pieces": 9,
+                            "weightKg": 10374,
+                            "status": "LOADED",
+                            "lastUpdated": "2025-11-19T13:18:12.657Z",
+                            "loadedAt": "2025-11-19T13:18:12.657Z",
+                            "deliveredAt": null,
+                            "offloadedAtStationCode": null
+                        }
+                    ]
+                }
+            ],
+            "lastUpdated": "2025-11-19T13:19:24.040Z"
+        }
+    ],
+    "stationCatalog": [
+        {
+            "code": "LA",
+            "name": "Los Angeles Freight Yard",
+            "city": "Los Angeles",
+            "state": "CA",
+            "lat": 34.033,
+            "lon": -118.238
+        },
+        {
+            "code": "KC",
+            "name": "Kansas City Intermodal",
+            "city": "Kansas City",
+            "state": "MO",
+            "lat": 39.104,
+            "lon": -94.598
+        },
+        {
+            "code": "CHI",
+            "name": "Chicago Rail Hub",
+            "city": "Chicago",
+            "state": "IL",
+            "lat": 41.874,
+            "lon": -87.64
+        },
+        {
+            "code": "MEM",
+            "name": "Memphis Freight Terminal",
+            "city": "Memphis",
+            "state": "TN",
+            "lat": 35.149,
+            "lon": -90.049
+        },
+        {
+            "code": "ATL",
+            "name": "Atlanta Distribution Center",
+            "city": "Atlanta",
+            "state": "GA",
+            "lat": 33.749,
+            "lon": -84.388
+        },
+        {
+            "code": "NYC",
+            "name": "New York Consolidation Yard",
+            "city": "New York",
+            "state": "NY",
+            "lat": 40.713,
+            "lon": -74.006
+        }
+    ]
+}
